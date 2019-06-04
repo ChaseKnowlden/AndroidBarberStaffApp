@@ -76,6 +76,7 @@ public class SalonListActivity extends AppCompatActivity implements IOnLoadCount
                             for (DocumentSnapshot salonSnapShot:task.getResult())
                             {
                                 Salon salon = salonSnapShot.toObject(Salon.class);
+                                salon.setSalonId(salonSnapShot.getId());
                                 salons.add(salon);
                             }
                             iBranchLoadListener.onBranchLoadSuccess(salons);
